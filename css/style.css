@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+:root {
+  --background-violet: hsl(273, 75%, 66%);
+  --background-blue: hsl(240, 73%, 65%);
+  --text-blue: hsl(237, 12%, 33%);
+  --text-light-blue: hsl(240, 6%, 50%);
+  --text-dark-blue: hsl(238, 29%, 16%);
+  --text-soft-red: hsl(14, 88%, 65%);
+  --dividers: hsl(240, 5%, 91%);
+  --white: hsl(0, 0%, 100%);
+  --shadow: hsla(260, 74%, 27%, 0.497);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    var(--background-violet),
+    var(--background-violet)
+  );
+}
+.container {
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1440px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-container {
+  grid-area: illustration;
+  background: url("/images/illustration-woman-online-desktop.svg"),
+    url("./images/bg-pattern-desktop.svg");
+  background-position: 100% 50%, 100% 65%;
+  background-repeat: no-repeat;
+  position: relative;
+  background-size: 122%, 255%;
+}
+
+.right-container {
+  grid-area: accordion;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+.faq-card {
+  display: grid;
+  grid-template-columns: 1.2fr 1.5fr;
+  grid-template-rows: 509px;
+  grid-template-areas: "illustration accordion";
+  width: 100%;
+  max-width: 920px;
+  background-color: var(--white);
+  border-radius: 15px;
+  box-shadow: 0px 50px 50px -20px var(--shadow);
+  margin: 0 40px;
+}
+
+.illustration-woman {
+  position: relative;
+}
+
+.box-illustration {
+  position: absolute;
+  top: 40%;
+  left: -24%;
+  width: 50%;
+}
+
+.faq-header {
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: bold;
+  font-size: 32px;
+  margin-bottom: 43px;
+}
+
+.faqItem {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid var(--dividers);
+}
+
+.header-arrow-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0px 0px 10px 0px;
+  padding: 10px 10px 10px 0px;
+}
+
+.arrow {
+  cursor: pointer;
+}
+
+.accordionItemHeading {
+  cursor: pointer;
+  color: var(--text-blue);
+  width: 100%;
+  font-family: "Kumbh Sans";
+  font-size: 14px;
+}
+
+.accordionItemHeading:hover {
+  color: var(--text-soft-red);
+}
+
+.close .accordionItemContent {
+  height: 0px;
+  transition: transform 0.2s ease;
+  transform: scaleY(0);
+  display: block;
+}
+
+.open .accordionItemContent {
+  width: 100%;
+  font-family: "Kumbh Sans";
+  font-size: 12px;
+  color: var(--text-light-blue);
+  margin: 0px 0px 20px 0px;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.open .accordionItemHeading {
+  font-family: "Kumbh Sans";
+  font-size: 14px;
+  margin: 0px;
+  color: var(--text-dark-blue);
+}
+
+.open .arrow {
+  transform: rotate(180deg);
+}
+
+.women-mobile {
+  display: none;
+}
+
+/* Media Query */
+@media only screen and (max-width: 896px) {
+  .faq-card {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    margin: 0 44px;
+  }
+
+  .box-illustration {
+    position: absolute;
+    top: 44%;
+    left: -19%;
+  }
+
+  .faq-header {
+    font-size: 29px;
+    margin-bottom: 34px;
+    padding-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 812px) {
+  .faq-card {
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: auto;
+  }
+
+  .faq-header {
+    font-size: 29px;
+    margin-bottom: 34px;
+    padding-top: 10px;
+  }
+
+  .box-illustration {
+    top: 41%;
+    left: -27%;
+}
+
+  .right-container {
+    margin: 6px auto;
+  }
+}
+
+@media only screen and (max-width: 736px) {
+  .faq-card {
+    grid-template-rows: 347px;
+  }
+  .right-container {
+    margin: 0 10px;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .faq-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px auto;
+    grid-template-areas:
+      "illustration"
+      "accordion";
+    max-width: 350px;
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: 0px 50px 50px -20px var(--background-blue);
+    margin: 0 20px;
+  }
+  .left-container {
+    grid-area: illustration;
+    background: url("images/bg-pattern-mobile.svg");
+    background-position: 49% 6%;
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: 65%;
+  }
+  .women-mobile {
+    display: block;
+    position: absolute;
+    top: -100px;
+    left: 28px;
+    width: 75%;
+  }
+  .box-illustration {
+    display: none;
+  }
+  .right-container {
+    padding: 20px;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+
