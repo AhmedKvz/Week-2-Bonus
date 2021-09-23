@@ -1,0 +1,49 @@
+
+/* :root {
+  --background-violet: hsl(273, 75%, 66%);
+  --background-blue: hsl(240, 73%, 65%);
+  --text-blue: hsl(237, 12%, 33%);
+  --text-light-blue: hsl(240, 6%, 50%);
+  --text-dark-blue: hsl(238, 29%, 16%);
+  --text-soft-red: hsl(14, 88%, 65%);
+  --dividers: hsl(240, 5%, 91%);
+  --white: hsl(0, 0%, 100%);
+  --shadow: hsla(260, 74%, 27%, 0.497);
+} */
+
+@font-face {
+    font-family: "Kumbh-bold";
+    src: url("assets/KumbhSans-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Kumbh-regular";
+    src: url("assets/KumbhSans-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    height: 100%;
+    background-image: linear-gradient(
+      to bottom,
+      hsl(273, 75%, 66%),
+      hsl(240, 73%, 65%)
+    );
+  }
+
+  .container-main {
+    height: 100%;
+    margin: 0 auto;
+    max-width: 1440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
